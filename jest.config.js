@@ -1,13 +1,10 @@
-﻿export default {
+export default {
   testEnvironment: "jsdom",
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   transform: {
     "^.+\\.[jt]sx?$": "babel-jest",
   },
-  collectCoverageFrom: [
-    "src/utils/bookRecordMapper.js",
-    "src/utils/bookStorage.js",
-    "src/utils/localStorage.js",
-    "src/utils/createId.js",
-    "src/constants/storageKey.js"
-  ],
+  moduleNameMapper: {
+    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
+  },
 };
